@@ -1,5 +1,0 @@
-!power {{ 
---format|pcstats
---name|Disengage [image](https://wiki.5e.tools/images/thumb/b/be/Amputation.png/30px-Amputation.png#.png)
---!Disengage:|If you take the Disengage action, your Movement doesn’t provoke Opportunity Attacks for the rest of the turn.
-}}
