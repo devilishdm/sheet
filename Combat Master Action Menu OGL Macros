@@ -1,0 +1,342 @@
+on('ready', function() {
+    
+	const macro_text = '!power {{--format|pcstats --name|Dash [image](https://wiki.5e.tools/images/thumb/b/bb/Sprint.png/30px-Sprint.png#.png) --!Dash|When you take the Dash action, you gain extra Movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on Your Turn if you dash.^^^^Any increase or decrease to your speed changes this additional Movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash.}}';
+	const macro_name = 'Dash';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!power {{--format|pcstats --name|Disarm [image](https://wiki.5e.tools/images/thumb/e/e5/Drop-weapon.png/30px-Drop-weapon.png#.png) --!Disarm:|A creature can use a weapon attack to knock a weapon or another item from a targets grasp. The attacker makes an attack roll contested by the targets Dexterity (Acrobatics) check. If the attacker wins the contest, the attack causes no damage or other ill effect, but the defender drops the item. ^^^^ The attacker has disadvantage on its attack roll if the target is holding the item with two or more hands. The target has advantage on its ability check if it is larger than the attacking creature, or disadvantage if it is smaller.}}';
+	const macro_name = 'Disarm';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!power {{--format|pcstats --name|Disengage [image](https://wiki.5e.tools/images/thumb/b/be/Amputation.png/30px-Amputation.png#.png) --!Disengage:|If you take the Disengage action, your Movement doesn’t provoke Opportunity Attacks for the rest of the turn.}}';
+	const macro_name = 'Disengage';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=dodging,duration=1,direction=-1';
+	const macro_name = 'Dodge';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=grappled,duration=1,direction=0';
+	const macro_name = 'Grapple';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=helped,duration=1,direction=-1';
+	const macro_name = 'Help';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=ready,duration=1,direction=-1,message=?{Action you wish to ready?|}';
+	const macro_name = 'Ready';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!power {{--format|pcstats --name|Search [image](https://wiki.5e.tools/images/thumb/2/25/Magnifying-glass.png/30px-Magnifying-glass.png#.png) --!Search|^*When you take the Sear⁠ch action, you devote your attention to finding something. Depending on the Nature of your se⁠arch, the DM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check.^^**Perception:**[[1d20+@{selected|perception_bonus}]] **Investigation:**[[1d20+@{selected|Investigation_bonus}]]}}';
+	const macro_name = 'Search';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!power {{--format|pcstats --name|Shove [image](https://wiki.5e.tools/images/thumb/a/a7/Hand.png/25px-Hand.png#.png) --!results|~C**@{selected|character_name}:[[1d20+@{selected|athletics_bonus}]] //VS// @{target|character_name}:[[1d20+?{Targets Chosen Skill|Athletics, @{target|athletics_bonus}|Acrobatics, @{target|acrobatics_bonus}}]]**~C --~~~ --Shove:| Using the Attack action, you can make a spec⁠ia⁠l melee atta⁠ck to shove a creature, either to knock it prone or push it away from you. If you’re able to make multiple attacks with the Att⁠ack action, this atta⁠ck replaces one of them.^^^^The target must be no more than one size larger than you and must be within your reach. Instead of Making an Attack roll, you make a Strength (Athletics) check contested by the target’s Stren⁠gth (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). You succeed automatically if the target is Incapacitated. If you succeed, you either knock the target prone or push it 5 feet away from you.}}}}';
+	const macro_name = 'Shove';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=burrow,duration=1,direction=0u.}}}}';
+	const macro_name = 'Burrow';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=climbing,duration=1,direction=0';
+	const macro_name = 'Climb';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=flying,duration=1,direction=0';
+	const macro_name = 'Fly';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --turn,next';
+	const macro_name = 'End-Turn';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=swimming,duration=1,direction=0';
+	const macro_name = 'Swim';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!power {{--whisper|self --format|pcstats --name|Attack List --tokenid|@{selected|token_id} --ogl_pc_attack_list|@{selected|character_id}}}';
+	const macro_name = 'Attacks';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!power {{--whisper|self --format|pcstats --name|@{selected|character_name} --leftsub|Save DC:@{selected|spell_save_dc} --rightsub|Attack Bonus:@{selected|spell_attack_bonus} --spell_slots|@{selected|character_id} --spell_list|@{selected|character_id}}}';
+	const macro_name = 'Spells';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '@{selected|wtype}&{template:simple} @{selected|rtype}?{Save|Strength,+[[(@{selected|strength_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_str_save}*@{selected|npc})]][STR SAVE] ]]&#125;&#125; {{rname=^{strength-save-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|strength_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_str_save}*@{selected|npc})]][STR SAVE] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|strength_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_str_save}*@{selected|npc})]][STR SAVE] ]] |Dexterity,+[[(@{selected|dexterity_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_dex_save}*@{selected|npc})]][DEX SAVE] ]]&#125;&#125; {{rname=^{dexterity-save-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|dexterity_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_dex_save}*@{selected|npc})]][DEX SAVE] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|dexterity_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_dex_save}*@{selected|npc})]][DEX SAVE] ]] |Constitution,+[[(@{selected|constitution_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_con_save}*@{selected|npc})]][CON SAVE] ]]&#125;&#125; {{rname=^{constitution-save-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|constitution_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_con_save}*@{selected|npc})]][CON SAVE] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|constitution_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_con_save}*@{selected|npc})]][CON SAVE] ]]|Intelligence,+[[(@{selected|intelligence_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_int_save}*@{selected|npc})]][INT SAVE] ]]&#125;&#125; {{rname=^{intelligence-save-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|intelligence_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_int_save}*@{selected|npc})]][INT SAVE] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|intelligence_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_int_save}*@{selected|npc})]][INT SAVE] ]]|Wisdom,+[[(@{selected|wisdom_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_wis_save}*@{selected|npc})]][WIS SAVE] ]]&#125;&#125; {{rname=^{wisdom-save-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|wisdom_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_wis_save}*@{selected|npc})]][WIS SAVE] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|wisdom_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_wis_save}*@{selected|npc})]][WIS SAVE] ]]|Charisma,+[[(@{selected|charisma_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_cha_save}*@{selected|npc})]][CHA SAVE] ]]&#125;&#125; {{rname=^{charisma-save-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|charisma_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_cha_save}*@{selected|npc})]][CHA SAVE] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|charisma_save_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_cha_save}*@{selected|npc})]][CHA SAVE] ]]}}} {{global=@{selected|global_save_mod}}} @{selected|charname_output}';
+	const macro_name = 'Saves';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '@{selected|wtype}&{template:simple} @{selected|rtype}?{Skill|Acrobatics,+[[(@{selected|acrobatics_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_acrobatics}*@{selected|npc})]][ACRO] ]]&#125;&#125; {{rname=^{acrobatics-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|acrobatics_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_acrobatics}*@{selected|npc})]][ACRO] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|acrobatics_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_acrobatics}*@{selected|npc})]][ACRO] ]]|Animal Handling,+[[(@{selected|animal_handling_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_animal_handling}*@{selected|npc})]][ANIM] ]]&#125;&#125; {{rname=^{animal-handling-u&#125;&#125;&#125;{{mod=[[ (@{selected|animal_handling_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_animal_handling}*@{selected|npc})]][ANIM] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|animal_handling_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_animal_handling}*@{selected|npc})]][ANIM] ]]|Arcana,+[[(@{selected|arcana_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_arcana}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{arcana-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|arcana_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_arcana}*@{selected|npc})]][ARCA] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|arcana_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_arcana}*@{selected|npc})]][ARCA] ]]|Athletics,+[[(@{selected|athletics_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_athletics}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{athletics-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|athletics_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_athletics}*@{selected|npc})]][ATHL] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|athletics_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_athletics}*@{selected|npc})]][ATHL] ]]|Decpetion,+[[(@{selected|deception_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_deception}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{deception-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|deception_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_deception}*@{selected|npc})]][DECE] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|deception_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_deception}*@{selected|npc})]][DECE] ]]|History,+[[(@{selected|history_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_history}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{history-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|history_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_history}*@{selected|npc})]][HIST] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|history_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_history}*@{selected|npc})]][HIST] ]]|Insight,+[[(@{selected|insight_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_insight}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{insight-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|insight_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_insight}*@{selected|npc})]][INSI] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|insight_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_insight}*@{selected|npc})]][INSI] ]]|Intimidation,+[[(@{selected|intimidation_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_intimidation}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{intimidation-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|intimidation_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_intimidation}*@{selected|npc})]][INTI] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|intimidation_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_intimidation}*@{selected|npc})]][INTI] ]]|Investigation,+[[(@{selected|investigation_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_investigation}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{investigation-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|investigation_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_investigation}*@{selected|npc})]][INVE] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|investigation_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_investigation}*@{selected|npc})]][INVE] ]]|Medicine,+[[(@{selected|medicine_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_medicine}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{medicine-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|medicine_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_medicine}*@{selected|npc})]][MEDI] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|medicine_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_medicine}*@{selected|npc})]][MEDI] ]]|Nature,+[[(@{selected|nature_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_nature}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{nature-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|nature_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_nature}*@{selected|npc})]][NATU] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|nature_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_nature}*@{selected|npc})]][NATU] ]]|Perception,+[[(@{selected|perception_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_perception}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{perception-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|perception_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_perception}*@{selected|npc})]][PERC] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|perception_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_perception}*@{selected|npc})]][PERC] ]]|Performance,+[[(@{selected|performance_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_performance}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{performance-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|performance_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_performance}*@{selected|npc})]][PERF] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|performance_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_performance}*@{selected|npc})]][PERF] ]]|Persuasion,+[[(@{selected|persuasion_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_persuasion}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{persuasion-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|persuasion_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_persuasion}*@{selected|npc})]][PERS] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|persuasion_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_persuasion}*@{selected|npc})]][PERS] ]]|Religion,+[[(@{selected|religion_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_religion}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{religion-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|religion_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_religion}*@{selected|npc})]][RELI] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|religion_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_religion}*@{selected|npc})]][RELI] ]]|Sleight of Hand,+[[(@{selected|sleight_of_hand_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_sleight_of_hand}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{sleight_of_hand-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|sleight_of_hand_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_sleight_of_hand}*@{selected|npc})]][SLEI] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|sleight_of_hand_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_sleight_of_hand}*@{selected|npc})]][SLEI] ]]|Stealth,+[[(@{selected|stealth_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_stealth}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{stealth-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|stealth_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_stealth}*@{selected|npc})]][STEA] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|stealth_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_stealth}*@{selected|npc})]][STEA] ]]|Survival,+[[(@{selected|survival_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_survival}*@{selected|npc})]][ARC] ]]&#125;&#125; {{rname=^{survival-u&#125;&#125;&#125; {{mod=[[ [[(@{selected|survival_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_survival}*@{selected|npc})]][SURV] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[(@{selected|survival_bonus}@{selected|pbd_safe}*(1-ceil((@{selected|npc})*0.00001)))+(@{selected|npc_survival}*@{selected|npc})]][SURV] ]]|Strength,+[[@{selected|strength_mod}]][STR] ]]&#125;&#125; {{rname=^{strength-u&#125;&#125;&#125; {{mod=[[ [[@{selected|strength_mod}]][STR] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[@{selected|strength_mod}]][STR] ]]|Dexterity,+[[@{selected|dexterity_mod}]][DEX] ]]&#125;&#125; {{rname=^{dexterity-u&#125;&#125;&#125; {{mod=[[ [[@{selected|dexterity_mod}]][DEX] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[@{selected|dexterity_mod}]][DEX] ]]|Constitution,+[[@{selected|constitution_mod}]][CON] ]]&#125;&#125; {{rname=^{constitution-u&#125;&#125;&#125; {{mod=[[ [[@{selected|constitution_mod}]][CON] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[@{selected|constitution_mod}]][CON] ]]|Intelligence,+[[@{selected|intelligence_mod}]][INT] ]]&#125;&#125; {{rname=^{intelligence-u&#125;&#125;&#125; {{mod=[[ [[@{selected|intelligence_mod}]][INT] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[@{selected|intelligence_mod}]][INT] ]]|Wisdom,+[[@{selected|wisdom_mod}]][WIS] ]]&#125;&#125; {{rname=^{wisdom-u&#125;&#125;&#125; {{mod=[[ [[@{selected|wisdom_mod}]][WIS] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[@{selected|wisdom_mod}]][WIS] ]]|Charisma,+[[@{selected|charisma_mod}]][CHA] ]]&#125;&#125; {{rname=^{charisma-u&#125;&#125;&#125; {{mod=[[ [[@{selected|charisma_mod}]][CHA] ]]&#125;&#125; {{r1=[[@{selected|d20}+[[@{selected|charisma_mod}]][CHA] ]]}}} {{global=@{selected|global_skill_mod}}} @{selected|charname_output}';
+	const macro_name = 'Checks';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
