@@ -1,0 +1,418 @@
+on('ready', function() {
+    
+	const macro_text = '!power {{--format|pcstats --name|Dash [image](https://wiki.5e.tools/images/thumb/b/bb/Sprint.png/30px-Sprint.png#.png) --!Dash|When you take the Dash action, you gain extra Movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on Your Turn if you dash.^^^^Any increase or decrease to your speed changes this additional Movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash.}} !cmaster --add,condition=dodging,duration=1,direction=-1';
+	const macro_name = 'Dash';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!power {{--format|pcstats --name|Disarm [image](https://wiki.5e.tools/images/thumb/e/e5/Drop-weapon.png/30px-Drop-weapon.png#.png) --!Disarm:|A creature can use a weapon attack to knock a weapon or another item from a targets grasp. The attacker makes an attack roll contested by the targets Dexterity (Acrobatics) check. If the attacker wins the contest, the attack causes no damage or other ill effect, but the defender drops the item. ^^^^ The attacker has disadvantage on its attack roll if the target is holding the item with two or more hands. The target has advantage on its ability check if it is larger than the attacking creature, or disadvantage if it is smaller.}}';
+	const macro_name = 'Disarm';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!power {{--format|pcstats --name|Disengage [image](https://wiki.5e.tools/images/thumb/b/be/Amputation.png/30px-Amputation.png#.png) --!Disengage:|If you take the Disengage action, your Movement doesn’t provoke Opportunity Attacks for the rest of the turn.}}';
+	const macro_name = 'Disengage';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=dodging,duration=1,direction=-1';
+	const macro_name = 'Dodge';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=grappled,duration=1,direction=0';
+	const macro_name = 'Grapple';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=helped,duration=1,direction=-1';
+	const macro_name = 'Help';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=ready,duration=1,direction=-1,message=?{Action you wish to ready?|}';
+	const macro_name = 'Ready';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!power {{--format|pcstats --name|Search [image](https://wiki.5e.tools/images/thumb/2/25/Magnifying-glass.png/30px-Magnifying-glass.png#.png) --!Search|^*When you take the Sear⁠ch action, you devote your attention to finding something. Depending on the Nature of your se⁠arch, the DM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check.^^**Perception:**[[1d20+@{selected|perception_bonus}]] **Investigation:**[[1d20+@{selected|Investigation_bonus}]]}}';
+	const macro_name = 'Search';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!power {{--format|pcstats --name|Shove [image](https://wiki.5e.tools/images/thumb/a/a7/Hand.png/25px-Hand.png#.png) --!results|~C**@{selected|character_name}:[[1d20+@{selected|athletics_bonus}]] //VS// @{target|character_name}:[[1d20+?{Targets Chosen Skill|Athletics, @{target|athletics_bonus}|Acrobatics, @{target|acrobatics_bonus}}]]**~C --~~~ --Shove:| Using the Attack action, you can make a spec⁠ia⁠l melee atta⁠ck to shove a creature, either to knock it prone or push it away from you. If you’re able to make multiple attacks with the Att⁠ack action, this atta⁠ck replaces one of them.^^^^The target must be no more than one size larger than you and must be within your reach. Instead of Making an Attack roll, you make a Strength (Athletics) check contested by the target’s Stren⁠gth (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). You succeed automatically if the target is Incapacitated. If you succeed, you either knock the target prone or push it 5 feet away from you.}}}}';
+	const macro_name = 'Shove';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=burrow,duration=1,direction=0u.}}}}';
+	const macro_name = 'Burrow';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=climbing,duration=1,direction=0';
+	const macro_name = 'Climb';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=flying,duration=1,direction=0';
+	const macro_name = 'Fly';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --turn,next';
+	const macro_name = 'End-Turn';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '!cmaster --add,condition=swimming,duration=1,direction=0';
+	const macro_name = 'Swim';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '%{selected|Attacks}';
+	const macro_name = 'Attacks';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '%{selected|Spells}';
+	const macro_name = 'Spells';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '%{selected|Utility}';
+	const macro_name = 'Utility Belt';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '%{selected|Feats}';
+	const macro_name = 'Feats';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '%{selected|Traits}';
+	const macro_name = 'Traits';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '%{selected|Saves}';
+	const macro_name = 'Save';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '%{selected|Checks}';
+	const macro_name = 'Check';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
+	const macro_text = '%{selected|Statblock}';
+	const macro_name = 'Statblock';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
