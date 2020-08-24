@@ -1,9 +1,0 @@
-!power {{
---whisper|self 
---format|pcstats
---name|@{selected|character_name} 
---leftsub|Save DC:@{selected|spell_save_dc}
---rightsub|Attack Bonus:@{selected|spell_attack_bonus}
---spell_slots|@{selected|character_id}
---spell_list|@{selected|character_id}
-}}
