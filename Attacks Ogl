@@ -1,7 +1,0 @@
-!power {{ 
---whisper|self
---format|pcstats
---name|Attack List
---tokenid|@{selected|token_id}
---ogl_pc_attack_list|@{selected|character_id}
-}}
