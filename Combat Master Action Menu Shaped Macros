@@ -114,6 +114,25 @@ macro.set('action', macro_text);
 })
 on('ready', function() {
     
+	const macro_text = '!power {{--format|pcstats --name|Hide --Description:|When you take the Hide action, you make a Stealth check in an attempt to hide, following the rules for Hiding. --Stealth Roll Result:|?{Advantage?|Normal,  [[ [$Atk] 1d20 + @{selected|stealth} ]]|Advantage, [[ [$Atk] 2d20kh1 + @{selected|stealth} ]]|Disadvantage,  [[ [$Atk] 2d20kl1 + @{selected|stealth} ]]}}}';
+	const macro_name = 'Hide';
+    
+	let players = findObjs({_type: 'player'});
+    
+	_.each(players, player => {
+    		let playerID = player.get('_id');
+let macro = findObjs({_type: 'macro', name: macro_name, _playerid: playerID})[0];
+   	 
+    		if (macro)
+macro.set('action', macro_text);
+    	else {createObj
+        			('macro', {_playerid: playerID, name: macro_name, action: macro_text});
+    		}
+	},
+	)
+})
+on('ready', function() {
+    
 	const macro_text = '!cmaster --add,condition=ready,duration=1,direction=-1,message=?{Action you wish to ready?|}';
 	const macro_name = 'Ready';
     
