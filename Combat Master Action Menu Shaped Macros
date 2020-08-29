@@ -1,6 +1,6 @@
 on('ready', function() {
     
-	const macro_text = '!power {{--format|pcstats --name|Dash [image](https://wiki.5e.tools/images/thumb/b/bb/Sprint.png/30px-Sprint.png#.png) --!Dash|When you take the Dash action, you gain extra Movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on Your Turn if you dash.^^^^Any increase or decrease to your speed changes this additional Movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash.}}';
+	const macro_text = '!power {{--format|pcstats --name|Dash [image](https://wiki.5e.tools/images/thumb/b/bb/Sprint.png/30px-Sprint.png#.png) --!Dash|When you take the Dash action, you gain extra Movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on Your Turn if you dash.^^^^Any increase or decrease to your speed changes this additional Movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash. --api_token-mod|_ids @{selected|token_id} _ignore-selected _set statusmarkers|dash}}';
 	const macro_name = 'Dash';
     
 	let players = findObjs({_type: 'player'});
@@ -57,8 +57,7 @@ macro.set('action', macro_text);
 })
 on('ready', function() {
     
-	const macro_text = '!power {{--format|pcstats --name|Dodge [image](https://wiki.5e.tools/images/thumb/f/f4/Tread.png/25px-Tread.png#.png) --Dodge:|When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any Attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity Saving Throws with advantage. You lose this benefit if you are Incapacitated or if your speed drops to 0. 
---api_token-mod|_ids @{selected|token_id} _ignore-selected _set statusmarkers|dodge}}';
+	const macro_text = '!power {{--format|pcstats --name|Dodge [image](https://wiki.5e.tools/images/thumb/f/f4/Tread.png/25px-Tread.png#.png) --Dodge:|When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any Attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity Saving Throws with advantage. You lose this benefit if you are Incapacitated or if your speed drops to 0. --api_token-mod|_ids @{selected|token_id} _ignore-selected _set statusmarkers|dodge}}';
 	const macro_name = 'Dodge';
     
 	let players = findObjs({_type: 'player'});
@@ -96,7 +95,7 @@ macro.set('action', macro_text);
 })
 on('ready', function() {
     
-	const macro_text = '!cmaster --add,condition=helped,duration=1,direction=-1';
+	const macro_text = '!power {{--format|pcstats --name|Help --Description:|You can lend your aid to another creature in the completion of a task. When you take the Help action, the creature you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided that it makes the check before the start of your next turn.^^^^Alternatively, you can aid a friendly creature in attacking a creature within 5 feet of you. You feint, distract the target, or in some other way team up to make your ally’s Attack more effective. If your ally attacks the target before your next turn, the first att⁠ack roll is made with advantage. --api_token-mod|_ids @{target|token_id} _ignore-selected _set statusmarkers|helping}}';
 	const macro_name = 'Help';
     
 	let players = findObjs({_type: 'player'});
@@ -134,7 +133,7 @@ macro.set('action', macro_text);
 })
 on('ready', function() {
     
-	const macro_text = '!cmaster --add,condition=ready,duration=1,direction=-1,message=?{Action you wish to ready?|}';
+	const macro_text = '!power {{--format|pcstats --name|Ready [image](https://wiki.5e.tools/images/thumb/6/64/Sentry-gun.png/25px-Sentry-gun.png#.png) --!Ready|Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on Your Turn, which lets you act using your Reaction before the start of your next turn.^^^^First, you decide what perceivable circumstance will trigger your Reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your speed in response to it.^^^^When the trigger occurs, you can either take your Reaction right after the trigger finishes or ignore the trigger.^^^^When you ready a spell, you cast it as normal but hold its energy, which you release with your Reaction when the trigger occurs. To be readied, a spell must have a Casting Time of 1 action, and holding onto the spell’s magic requires Concentration. If your concen⁠tration is broken, the spell dissipates without taking Effect. --!Button|[Ready a Reaction](!cmaster --add,condition=ready,duration=1,direction=-1,message=&#63;{Action you wish to ready&#63;|})}}';
 	const macro_name = 'Ready';
     
 	let players = findObjs({_type: 'player'});
